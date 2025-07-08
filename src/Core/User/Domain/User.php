@@ -25,6 +25,11 @@ class User
      */
     private string $email;
 
+    /**
+     * @ORM\Column(type="boolean", options={"default": false}, nullable=false)
+     */
+    private bool $active = true;
+
     public function __construct(string $email)
     {
         $this->id = null;
@@ -34,5 +39,15 @@ class User
     public function getEmail(): string
     {
         return $this->email;
+    }
+
+    public function isActive(): bool
+    {
+        return $this->active;
+    }
+
+    public function setActive(bool $active): void
+    {
+        $this->active = $active;
     }
 }

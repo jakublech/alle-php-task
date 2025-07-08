@@ -1,5 +1,3 @@
-version: '3.5'
-
 services:
   ak_invoice_php:
     container_name: ak_invoice_php

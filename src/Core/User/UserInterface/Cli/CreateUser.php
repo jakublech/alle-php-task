@@ -13,16 +13,18 @@ namespace App\Core\User\UserInterface\Cli;
 
 use App\Common\Bus\CommandBusInterface;
 use App\Core\User\Application\Command\CreateUserCommand;
+use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
+#[AsCommand(
+    name: 'app:user:create',
+    description: 'Creates a new user with the given email (inactive by default)'
+)]
 class CreateUser extends Command
 {
-    protected static $defaultName = 'app:user:create';
-
-
     public function __construct(private CommandBusInterface $commandBus)
     {
         parent::__construct();

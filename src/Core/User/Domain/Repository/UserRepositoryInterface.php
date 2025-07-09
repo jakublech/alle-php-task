@@ -12,5 +12,7 @@ interface UserRepositoryInterface
      */
     public function getByEmail(string $email): User;
 
+    public function findInactiveUsers(): array;
+
     public function save(User $user): void;
 }

@@ -3,6 +3,7 @@
 namespace App\Core\User\Domain;
 
 use App\Common\EventManager\EventsCollectorTrait;
+use App\Core\User\Domain\Event\UserCreatedEvent;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
